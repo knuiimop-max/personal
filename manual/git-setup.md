@@ -92,8 +92,8 @@ Test the SSH connection to GitHub:
 ssh -T git@github.com
 ```
 The first time, you'll see a warning like:
-> The authenticity of host 'github.com' can't be established...
-> Are you sure you want to continue connecting (yes/no)?
+> The authenticity of host 'github.com' can't be established...  
+> Are you sure you want to continue connecting (yes/no)?  
 Type yes and press Enter.
 
 If everything works, you should see a message like:
@@ -111,7 +111,7 @@ Verify it was added:
 git remote -v
 ```
 You should see:
-> origin git@github.com:username/repo-name.git (fetch)
+> origin git@github.com:username/repo-name.git (fetch)  
 > origin git@githbu.com:username/repo-name.git (push)
 
 
@@ -164,5 +164,5 @@ Verification:
 git remote -v
 ```
 You should see output similar to:
-> origin git@github.com:your-username/your-repo-name.git (fetch)
+> origin git@github.com:your-username/your-repo-name.git (fetch)  
 > origin git@github.com:your-username/your-repo-name.git (push)
