@@ -98,8 +98,10 @@ Type yes and press Enter.
 
 If everything works, you should see a message like:
 > Hi your-username! You've successfully authenticated, but GitHub does not provide shell access.
-link your local repo to GitHub. It looks like:
-> git@github.com:username/repo-name.git
+link your local repo to GitHub.   
+> It looks like:
+> git@github.com:username/repo-name.git  
+
 Then, inside your project folder in the terminal:
 ```bash
 git remote add origin git@github.com:username/repo-name.git
