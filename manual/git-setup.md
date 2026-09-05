@@ -22,33 +22,39 @@ username and user email:
 git config --global user.name "your name"
 git config --global user.email "your email"
 ```
-checking configs:
+Check your configuration:
 ```bash
-cat ~/.config
+git config --list --global
 ```
 
 
 
 ### *Git init*
 
+Go to the folder where you want to create a repository:
 ```bash
 cd /path/to/your/folder
+```
+Initialize Git:
+```bash
 git init
 ```
-checking result:
+Check the repository status:
 ```bash
 git status
 ```
-rename current branch:
+Rename the default branch to main:
 ```bash
 git branch -m main
 ```
-verify the default branch settings:
+To make main the default branch for future repositories:
 ```bash
 git config --global --get init.defaultBranch
 ```
-This should print main, confirming that all future git init commands will start with main by default.
-
+Check the current setting:
+```bash
+git config --global --get init.defaultBranch
+```
 
 
 ### *Set up SSH*
@@ -61,21 +67,17 @@ If no key, then generate a new SSH key:
 ```bash
 ssh-keygen -t ed25519 -C "your email"
 ```
-Then press Enter 3 times. 
-Check your keys:
-```bash
-ls -al ~/.ssh
-```
+Press Enter to use the default location.
+Press Enter again if you don't want to set a passphrase.
 Start the ssh-agent and add your key:
 ```bash
 eval "$(ssh-agent -s)"
 ```
-This should print something like "Agent pid 12345"
-Then add your private key to it:
+Add your private SSH key:
 ```bash
 ssh-add ~/.ssh/id_ed25519
 ```
-Display the public key content:
+Display your public key:
 ```bash
 cat ~/.ssh/id_ed25519.pub
 ```
@@ -102,13 +104,17 @@ link your local repo to GitHub.
 > It looks like:
 > git@github.com:username/repo-name.git  
 
-Then, inside your project folder in the terminal:
+
+
+### *Connect local repository to GitHub*
+
+Add your GitHub repository as a remote:
 ```bash
 git remote add origin git@github.com:username/repo-name.git
 ```
 This creates a "link" (named origin) between your local repo and the one on GitHub.
 
-Verify it was added:
+Check the remote:
 ```bash
 git remote -v
 ```
