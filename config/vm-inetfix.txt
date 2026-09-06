@@ -1,0 +1,24 @@
+Решение
+
+1. Разрешить forwarding трафика в UFW:
+
+bash
+sudo sed -i 's/DEFAULT_FORWARD_POLICY="DROP"/DEFAULT_FORWARD_POLICY="ACCEPT"/' /etc/default/ufw
+sudo ufw reload
+
+2. Явно разрешить трафик от virbr0:
+
+bash
+sudo ufw allow in on virbr0
+
+3. Перезапустить виртуалку, чтобы гость заново отправил DHCP-запрос:
+
+bash
+sudo virsh destroy <имя_vm>
+sudo virsh start <имя_vm>
+
+4. Проверить в Windows:
+
+ipconfig /all
+
+Должен появиться IP из диапазона 192.168.122.x и Default Gateway 192.168.122.1.
